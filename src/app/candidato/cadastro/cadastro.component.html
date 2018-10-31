@@ -1,0 +1,43 @@
+<form (ngSubmit)="salvar()">
+
+  <br/>
+  <h3>{{titulo}}</h3>
+
+  <label>Id:
+      <input type="input" name="id" size="10" [(ngModel)]="candidato.id" disabled/>
+  </label><br/><br/>
+
+  <label>Nome:
+      <input type="input" name="nome" size="30" [(ngModel)]="candidato.nome"/>
+  </label><br/><br/>
+  <label>Avaliação Geral:
+      <input type="input" name="avaliacacaoGeral" size="30" [(ngModel)]="candidato.avaliacacaoGeral"/>
+  </label><br/><br/>
+  <label>Idade:
+      <input type="number" name="idade" size="30" [(ngModel)]="candidato.idade"/>
+  </label><br/><br/>
+  <label>Número RG:
+      <input type="input" name="numeroRg" size="30" [(ngModel)]="candidato.numeroRg"/>
+  </label><br/><br/>
+  <label>Número CPF:
+    <input type="input" name="numerocpf" size="30" [(ngModel)]="candidato.numerocpf"/>
+</label><br/><br/>
+<label>Telefone:
+    <input type="input" name="telefone" size="30" [(ngModel)]="candidato.telefone"/>
+</label><br/><br/>
+<label>Endereço:
+    <input type="input" name="endereco" size="30" [(ngModel)]="candidato.endereco"/>
+</label><br/><br/>
+<label>Data de Nascimento:
+    <input type="input" name="dataNas" size="30" [(ngModel)]="candidato.dataNas"/>
+</label><br/><br/>
+<label>email:
+    <input type="input" name="email" size="30" [(ngModel)]="candidato.email"/>
+</label><br/><br/>
+<label>habilidades:
+    <input type="input" name="habilidades" size="30" [(ngModel)]="candidato.habilidades"/>
+</label><br/><br/>
+
+
+  <button type="submit">Salvar</button>
+</form>
