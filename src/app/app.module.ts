@@ -15,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { ConsultaCandidatoComponent } from './candidato/consulta/consulta.component';
 import { MenuComponent } from './menu/menu.component';
 import { routing } from './ app.routes';
+import { CadastroFuncionarioComponent } from './funcionario/cadastro-funcionario/cadastro-funcionario.component';
+import { ConsultaFuncionarioComponent } from './funcionario/consulta-funcionario/consulta-funcionario.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { routing } from './ app.routes';
     ConsultaCandidatoComponent,
     CadastroCargoComponent,
     ConsultaCargoComponent,
-    MenuComponent
+    MenuComponent,
+    CadastroFuncionarioComponent,
+    ConsultaFuncionarioComponent
   ],
   imports: [
     BrowserModule,

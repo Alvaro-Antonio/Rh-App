@@ -39,14 +39,16 @@ import { Response } from '../../services/Response';
 
     /*FUNÇÃO PARA SALVAR UM NOVO REGISTRO OU ALTERAÇÃO EM UM REGISTRO EXISTENTE */
     salvar(): void {
+           console.log(this.candidato);      
 
-      /*SE NÃO TIVER CÓDIGO VAMOS INSERIR UM NOVO REGISTRO */
+/*SE NÃO TIVER CÓDIGO VAMOS INSERIR UM NOVO REGISTRO */
       // tslint:disable-next-line:triple-equals
       if (this.candidato.id == undefined) {
 
         /*CHAMA O SERVIÇO PARA ADICIONAR UMA NOVA PESSOA */
         this.candidatoService.addCandidato(this.candidato).subscribe(response => {
 
+console.log(response);
          // PEGA O RESPONSE DO RETORNO DO SERVIÇO
            // tslint:disable-next-line:prefer-const
            let res: Response = <Response>response;
@@ -93,7 +95,8 @@ import { Response } from '../../services/Response';
        },
        (erro) => {
          /**AQUI VAMOS MOSTRAR OS ERROS NÃO TRATADOS
-          EXEMPLO: SE APLICAÇÃO NÃO CONSEGUIR FAZER UMA REQUEST NA API                        */
+          EXEMPLO: SE iAPLICAÇÃO NÃO CONSEGUIR FAZER UMA REQUEST NA API                        */
+	console.log(erro);
        });
       }
 
