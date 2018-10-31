@@ -1,3 +1,6 @@
+import { CadastroCargoComponent } from './cargo/cadastro/cadastro.component';
+import { ConsultaCargoComponent } from './cargo/consulta/consulta.component';
+import { CargoService } from './services/cargo.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -7,9 +10,9 @@ import { CandidatoService } from './services/candidato.service';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { CadastroComponent } from './candidato/cadastro/cadastro.component';
+import { CadastroCandidatoComponent } from './candidato/cadastro/cadastro.component';
 import { HomeComponent } from './home/home.component';
-import { ConsultaComponent } from './candidato/consulta/consulta.component';
+import { ConsultaCandidatoComponent } from './candidato/consulta/consulta.component';
 import { MenuComponent } from './menu/menu.component';
 import { routing } from './ app.routes';
 
@@ -17,8 +20,10 @@ import { routing } from './ app.routes';
   declarations: [
     AppComponent,
     HomeComponent,
-    CadastroComponent,
-    ConsultaComponent,
+    CadastroCandidatoComponent,
+    ConsultaCandidatoComponent,
+    CadastroCargoComponent,
+    ConsultaCargoComponent,
     MenuComponent
   ],
   imports: [
@@ -27,7 +32,7 @@ import { routing } from './ app.routes';
     FormsModule,
     routing
   ],
-  providers: [ConfigService, CandidatoService],
+  providers: [ConfigService, CandidatoService, CargoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

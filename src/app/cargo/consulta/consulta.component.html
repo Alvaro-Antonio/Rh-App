@@ -1,3 +1,24 @@
-<p>
-  consulta works!
-</p>
+<h3>{{titulo}}</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Nome</th>
+        <th>Editar</th>
+        <th>Excluir</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let cargo of cargos; let i = index;">
+        <td>{{ cargo.id }}</td>
+        <td>{{ cargo.nomeCargo }}</td>
+        <td><a (click)="editar(cargo.id);">Editar</a></td>
+        <td><a (click)="excluir(cargo.id, i);">Excluir</a></td>
+        </tr>
+        <tr>
+           <td colspan="6" style="text-align: right;">Total de Registros: {{ cargos.length }}</td>
+        </tr>
+    </tbody>
+</table>

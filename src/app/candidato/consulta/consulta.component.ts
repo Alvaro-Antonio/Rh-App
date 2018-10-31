@@ -10,7 +10,7 @@ import { Response } from '../../services/Response';
     templateUrl: './consulta.component.html',
     styleUrls: [ './consulta.component.css']
   })
-  export class ConsultaComponent implements OnInit {
+  export class ConsultaCandidatoComponent implements OnInit {
 
     private candidatos: Candidato[] = new Array();
     private titulo: string;

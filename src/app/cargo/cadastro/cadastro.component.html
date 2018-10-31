@@ -1,3 +1,30 @@
-<p>
-  cadastro works!
-</p>
+<form (ngSubmit)="salvarCargo()">
+
+  <br/>
+  <h3>{{titulo}}</h3>
+
+  <label>Id:
+      <input type="input" name="id" size="10" [(ngModel)]="cargo.id" disabled/>
+  </label><br/><br/>
+
+  <label>Nome do cargo:
+      <input type="input" name="nomeCargo" size="30" [(ngModel)]="cargo.nomeCargo"/>
+  </label><br/><br/>
+  <label>Salario Cargo:
+      <input type="number" name="salarioCargo" size="30" [(ngModel)]="cargo.salarioCargo"/>
+  </label><br/><br/>
+  <label>valeAlimentacao:
+      <input type="number" name="valeAlimentacao" size="30" [(ngModel)]="cargo.valeAlimentacao"/>
+  </label><br/><br/>
+  <label>valeTransporte:
+    <input type="number" name="valeTransporte" size="30" [(ngModel)]="cargo.valeTransporte"/>
+</label><br/><br/>
+<label>valorHoraExtra:
+  <input type="number" name="valorHoraExtra" size="30" [(ngModel)]="cargo.valorHoraExtra"/>
+</label><br/><br/>
+<label>gratificacao:
+  <input type="number" name="gratificacao" size="30" [(ngModel)]="cargo.gratificacao"/>
+</label><br/><br/>
+
+  <button type="submit">Salvar</button>
+</form>

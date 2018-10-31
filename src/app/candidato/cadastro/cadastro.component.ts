@@ -11,7 +11,7 @@ import { Response } from '../../services/Response';
     templateUrl: './cadastro.component.html',
     styleUrls: ['./cadastro.component.css']
   })
-  export class CadastroComponent implements OnInit {
+  export class CadastroCandidatoComponent implements OnInit {
 
     private titulo: string;
     private candidato: Candidato = new Candidato();

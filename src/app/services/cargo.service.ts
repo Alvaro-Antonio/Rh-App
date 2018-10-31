@@ -8,15 +8,14 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 // tslint:disable-next-line:import-blacklist
 import { Observable} from 'rxjs/Rx';
-/*import { map, filter, scan } from "rxjs/operators";*/
 
-import {Candidato} from './candidato';
+import {Cargo} from './cargo';
 import {ConfigService} from './config.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CandidatoService {
+export class CargoService {
 
     private baseUrlService: string;
     private headers: Headers;
@@ -26,39 +25,39 @@ export class CandidatoService {
                 private configService: ConfigService) {
 
         /**SETANDO A URL DO SERVIÇO REST QUE VAI SER ACESSADO */
-        this.baseUrlService = configService.getUrlService() + 'candidato/';
+        this.baseUrlService = configService.getUrlService() + 'cargo/';
 
         /*ADICIONANDO O JSON NO HEADER */
         this.headers = new Headers({ 'Content-Type': 'application/json;charset=UTF-8' });
         this.options = new RequestOptions({ headers: this.headers });
     }
 
-    /**CONSULTA TODAS AS Candidatos CADASTRADAS */
-    getCandidatos() {
+    /**CONSULTA TODAS AS Cargos CADASTRADAS */
+    getCargos() {
         return this.http.get(this.baseUrlService).map(res => res.json());
     }
 
-    /**ADICIONA UMA NOVA Candidato */
-    addCandidato(candidato: Candidato) {
+    /**ADICIONA UMA NOVA Cargo */
+    addCargo(cargo: Cargo) {
 
-        return this.http.post(this.baseUrlService, JSON.stringify(candidato), this.options).map(res => res.json());
+        return this.http.post(this.baseUrlService, JSON.stringify(cargo), this.options).map(res => res.json());
     }
-    /**EXCLUI UMA Candidato */
-    excluirCandidato(id: number) {
+    /**EXCLUI UMA Cargo */
+    excluirCargo(id: number) {
 
         return this.http.delete(this.baseUrlService + id).map(res => res.json());
     }
 
     /**CONSULTA UMA PESSOA PELO CÓDIGO */
-    getCandidato(id: number) {
+    getCargo(id: number) {
 
         return this.http.get(this.baseUrlService + id).map(res => res.json());
     }
 
-    /**ATUALIZA INFORMAÇÕES DA Candidato */
-    atualizarCandidato(candidato: Candidato) {
+    /**ATUALIZA INFORMAÇÕES DA Cargo */
+    atualizarCargo(cargo: Cargo) {
 
-        return this.http.put(this.baseUrlService, JSON.stringify(candidato), this.options)
+        return this.http.put(this.baseUrlService, JSON.stringify(cargo), this.options)
         .map(res => res.json());
     }
 
