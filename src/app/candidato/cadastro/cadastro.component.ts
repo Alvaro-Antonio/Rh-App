@@ -38,9 +38,8 @@ import { Response } from '../../services/Response';
     }
 
     /*FUNÇÃO PARA SALVAR UM NOVO REGISTRO OU ALTERAÇÃO EM UM REGISTRO EXISTENTE */
-    salvar(): void {
-           console.log(this.candidato);      
-
+    salvarCandidato(): void {
+           console.log(this.candidato);
 /*SE NÃO TIVER CÓDIGO VAMOS INSERIR UM NOVO REGISTRO */
       // tslint:disable-next-line:triple-equals
       if (this.candidato.id == undefined) {
@@ -96,7 +95,7 @@ console.log(response);
        (erro) => {
          /**AQUI VAMOS MOSTRAR OS ERROS NÃO TRATADOS
           EXEMPLO: SE iAPLICAÇÃO NÃO CONSEGUIR FAZER UMA REQUEST NA API                        */
-	console.log(erro);
+console.log(erro);
        });
       }
 
