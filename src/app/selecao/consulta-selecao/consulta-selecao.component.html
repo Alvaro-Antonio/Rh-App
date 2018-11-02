@@ -1,0 +1,28 @@
+<div id="consultaSelecao">
+  <h3>{{titulo}}</h3>
+
+  <table>
+      <thead>
+      <tr>
+          <th>id</th>
+          <th>Tipo</th>
+          <th>Data Selecao</th>
+          <th>Editar</th>
+          <th>Excluir</th>
+      </tr>
+      </thead>
+
+      <tbody>
+          <tr *ngFor="let selecao of selecoes; let i = index;">
+          <td>{{ selecao.id }}</td>
+          <td>{{ selecao.tipoSelecao }}</td>
+          <td>{{ selecao.dataSelecao }}</td>
+          <td><a (click)="editar(selecao.id);">Editar</a></td>
+          <td><a (click)="excluir(selecao.id, i);">Excluir</a></td>
+          </tr>
+          <tr>
+             <td colspan="6" style="text-align: right;">Total de Registros: {{ selecoes.length }}</td>
+          </tr>
+      </tbody>
+  </table>
+  </div>

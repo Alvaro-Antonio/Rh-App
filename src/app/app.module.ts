@@ -18,6 +18,16 @@ import { routing } from './ app.routes';
 import { CadastroFuncionarioComponent } from './funcionario/cadastro-funcionario/cadastro-funcionario.component';
 import { ConsultaFuncionarioComponent } from './funcionario/consulta-funcionario/consulta-funcionario.component';
 import { FuncionarioService } from './services/funcionario.service';
+import { CadastroTreinamentoComponent } from './treinamento/cadastro-treinamento/cadastro-treinamento.component';
+import { ConsultaTreinamentoComponent } from './treinamento/consulta-treinamento/consulta-treinamento.component';
+import { ConsultaTalentosComponent } from './bancoDeTalentos/consulta-talentos/consulta-talentos.component';
+import { CadastraTalentosComponent } from './bancoDeTalentos/cadastra-talentos/cadastra-talentos.component';
+import { ConsultaSelecaoComponent } from './selecao/consulta-selecao/consulta-selecao.component';
+import { AdmitirCandidatoComponent } from './selecao/admitir-candidato/admitir-candidato.component';
+import { CadastroSelecaoComponent } from './selecao/cadastro-selecao/cadastro-selecao.component';
+import { BancoDeTalentosService } from './services/BancoDeTalentos.Service';
+import { TreinamentoService } from './services/treinamento.service';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +41,17 @@ import { FuncionarioService } from './services/funcionario.service';
     CadastroFuncionarioComponent,
     ConsultaFuncionarioComponent,
     CadastroFuncionarioComponent,
-    ConsultaFuncionarioComponent
+    ConsultaFuncionarioComponent,
+    CadastroTreinamentoComponent,
+    ConsultaTreinamentoComponent,
+    ConsultaTalentosComponent,
+    CadastraTalentosComponent,
+    ConsultaSelecaoComponent,
+    AdmitirCandidatoComponent,
+    CadastroSelecaoComponent,
+    ConsultaTreinamentoComponent,
+    CadastraTalentosComponent
+
   ],
   imports: [
     BrowserModule,
@@ -39,7 +59,7 @@ import { FuncionarioService } from './services/funcionario.service';
     FormsModule,
     routing
   ],
-  providers: [ConfigService, CandidatoService, CargoService, FuncionarioService],
+  providers: [ConfigService, CandidatoService, CargoService, FuncionarioService, TreinamentoService, BancoDeTalentosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

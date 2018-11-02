@@ -1,0 +1,17 @@
+<form (ngSubmit)="salvarTreinamento()">
+
+  <br/>
+  <h3>{{titulo}}</h3>
+
+  <label>Id:
+      <input type="input" name="id" size="10" [(ngModel)]="treinamento.id" disabled/>
+  </label><br/><br/>
+
+  <label>Nome:
+      <input type="input" name="tipo" size="30" [(ngModel)]="treinamento.tipo"/>
+  </label><br/><br/>
+
+  <button type="submit">Salvar</button>
+</form>
+
+

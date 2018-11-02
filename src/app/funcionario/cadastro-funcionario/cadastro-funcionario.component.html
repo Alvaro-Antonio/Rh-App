@@ -1,1 +1,49 @@
-<h3>{{titulo}}</h3>
+<form (ngSubmit)="salvarFuncionario()">
+
+  <br/>
+  <h3>{{titulo}}</h3>
+
+  <label>Id:
+      <input type="input" name="id" size="10" [(ngModel)]="funcionario.id" disabled/>
+  </label><br/><br/>
+
+  <label>Nome:
+      <input type="input" name="nome" size="30" [(ngModel)]="funcionario.nome"/>
+  </label><br/><br/>
+  <label>Idade:
+      <input type="number" name="idade" size="30" [(ngModel)]="funcionario.idade"/>
+  </label><br/><br/>
+  <label>Cargo:
+    <select>
+      <option *ngFor='let cargo of cargos; let i = index;' [ngValue]="cargo.id">
+        {{cargo.nomeCargo}}
+      </option>
+  </select>
+
+</label><br/><br/>
+
+  <label>Número RG:
+      <input type="input" name="numeroRg" size="30" [(ngModel)]="funcionario.numeroRg"/>
+  </label><br/><br/>
+  <label>Número CPF:
+    <input type="input" name="numerocpf" size="30" [(ngModel)]="funcionario.numerocpf"/>
+</label><br/><br/>
+<label>Telefone:
+    <input type="tel" name="telefone" size="30" [(ngModel)]="funcionario.telefone"/>
+</label><br/><br/>
+<label>Endereço:
+    <input type="input" name="endereco" size="30" [(ngModel)]="funcionario.endereco"/>
+</label><br/><br/>
+<label>Data de Nascimento:
+    <input type="date" name="dataNas" size="30" [(ngModel)]="funcionario.dataNas"/>
+</label><br/><br/>
+<label>email:
+    <input type="email" name="email" size="30" [(ngModel)]="funcionario.email"/>
+</label><br/><br/>
+<label>habilidades:
+    <input type="input" name="habilidades" size="30" [(ngModel)]="funcionario.habilidades"/>
+</label><br/><br/>
+
+
+  <button type="submit">Salvar</button>
+</form>

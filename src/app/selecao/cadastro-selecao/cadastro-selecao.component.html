@@ -1,0 +1,16 @@
+<form (ngSubmit)="salvarSelecao()">
+
+  <br/>
+  <h3>{{titulo}}</h3>
+
+  <label>Id:
+      <input type="input" name="id" size="10" [(ngModel)]="selecao.id" disabled/>
+  </label><br/><br/>
+
+  <label>Nome:
+      <input type="input" name="tipo" size="30" [(ngModel)]="selecao.tipo"/>
+  </label><br/><br/>
+
+  <button type="submit">Salvar</button>
+</form>
+

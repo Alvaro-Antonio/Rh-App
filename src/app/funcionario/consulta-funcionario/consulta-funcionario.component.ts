@@ -1,8 +1,10 @@
+import { CargoService } from './../../services/cargo.service';
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { Funcionario } from '../../services/funcionario';
 import { FuncionarioService } from '../../services/funcionario.service';
 import { Response } from '../../services/Response';
+import { Cargo } from 'src/app/services/cargo';
 
 
 @Component({
@@ -14,9 +16,10 @@ import { Response } from '../../services/Response';
 
     private funcionarios: Funcionario[] = new Array();
     private titulo: string;
+    private cargos: Cargo[] = new Array();
 
-    constructor(private funcionarioService: FuncionarioService,
-                private router: Router) {}
+    constructor(private funcionarioService: FuncionarioService, private cargoService: CargoService,
+                      private router: Router) {}
 
     ngOnInit() {
 
@@ -25,6 +28,7 @@ import { Response } from '../../services/Response';
 
       /*CHAMA O SERVIÇO E RETORNA TODAS AS PESSOAS CADASTRADAS */
       this.funcionarioService.getFuncionarios().subscribe(res => this.funcionarios = res);
+      this.cargoService.getCargos().subscribe(res => this.cargos = res);
     }
 
     /**EXCLUI UM REGISTRO QUANDO CLICAMOS NA OPÇÃO EXCLUIR DE UMA
