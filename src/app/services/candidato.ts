@@ -1,7 +1,9 @@
+import { Selecao } from './selecao';
+
 export class Candidato {
        id: number;
        aprovacao: boolean;
-       avaliacacaoGeral: string;
+       avaliacaoGeral: string;
        nome: string;
        idade: number;
        numeroRg: string;
@@ -11,4 +13,5 @@ export class Candidato {
        dataNas: string;
        email: string;
        habilidades: string;
+       selecao: Selecao;
 }

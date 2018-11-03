@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import { Candidato } from '../../services/candidato';
 import { CandidatoService } from '../../services/candidato.service';
 import { Response } from '../../services/Response';
+import { Selecao } from 'src/app/services/selecao';
+import { SelecaoService } from 'src/app/services/selecao.service.';
 
 @Component({
     selector: 'app-cadastro-candidato',
@@ -15,14 +17,15 @@ import { Response } from '../../services/Response';
 
     private titulo: string;
     private candidato: Candidato = new Candidato();
+    private selecoes: Selecao[] = new Array();
 
-    constructor(private candidatoService: CandidatoService,
+    constructor(private candidatoService: CandidatoService,private selecaoService: SelecaoService,
                 private router: Router,
                 private activatedRoute: ActivatedRoute) {}
 
   /*CARREGADO NA INICIALIZAÇÃO DO COMPONENTE */
     ngOnInit() {
-
+      this.selecaoService.getSelecoes().subscribe(res => this.selecoes = res);
       this.activatedRoute.params.subscribe(parametro => {
 
         // tslint:disable-next-line:triple-equals
@@ -36,7 +39,13 @@ import { Response } from '../../services/Response';
 
       });
     }
-
+    /*para testar se existe selecao e mudar layout */
+    getClass() {
+      if (this.selecoes.length < 1) {
+        return 'someCadastro';
+      } else {
+        return 'apareceCadastro'; }
+    }
     /*FUNÇÃO PARA SALVAR UM NOVO REGISTRO OU ALTERAÇÃO EM UM REGISTRO EXISTENTE */
     salvarCandidato(): void {
            console.log(this.candidato);

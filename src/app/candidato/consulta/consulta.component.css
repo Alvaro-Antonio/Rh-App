@@ -2,34 +2,36 @@
 div#consultaCandidato {
     position:fixed;
     float: left;
-    width: 80%;
+    width: 100%;
     margin-left: 22%;
 }
 table {
-    position:fixed;
-    border-collapse: collapse;    
-    width: 100%;
+    position:absolute;
+    border-collapse: collapse;
+    min-width: 50%;
+    max-width: 75%;
+    margin-right: 5%;
     float: left;
 }
- 
+
 th, td {
     text-align: left;
     padding: 8px;
 }
- 
+
 tr:nth-child(even){
     background-color: rgba(106, 141, 173, 0.71);
     color: white;
 }
- 
+
 th {
     background-color: #213E8D;
     color: white;
 }
- 
+
 a{
-    cursor: pointer; 
-    cursor: hand; 
+    cursor: pointer;
+    cursor: hand;
     text-decoration:underline;
- 
+
 }

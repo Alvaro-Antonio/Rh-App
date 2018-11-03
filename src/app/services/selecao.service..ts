@@ -1,3 +1,4 @@
+import { Candidato } from './candidato';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Headers} from '@angular/http';
@@ -11,6 +12,7 @@ import { Observable} from 'rxjs/Rx';
 
 import {Selecao} from './selecao';
 import {ConfigService} from './config.service';
+import { Cargo } from './cargo';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +61,9 @@ export class SelecaoService {
 
         return this.http.put(this.baseUrlService, JSON.stringify(selecao), this.options)
         .map(res => res.json());
+    }
+    contratar(candidato: Candidato, cargo: Cargo) {
+
     }
 
 }

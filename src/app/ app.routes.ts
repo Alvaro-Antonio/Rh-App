@@ -1,3 +1,4 @@
+import { AdmitirCandidatoComponent } from './selecao/admitir-candidato/admitir-candidato.component';
 import { ConsultaTalentosComponent } from './bancoDeTalentos/consulta-talentos/consulta-talentos.component';
 import { ConsultaTreinamentoComponent } from './treinamento/consulta-treinamento/consulta-treinamento.component';
 import { CadastroTreinamentoComponent } from './treinamento/cadastro-treinamento/cadastro-treinamento.component';
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     { path: 'consulta-bancodeTalentos', component: ConsultaTalentosComponent},
     { path: 'cadastro-selecao', component: CadastroSelecaoComponent},
     { path: 'cadastro-selecao/:id', component: CadastroSelecaoComponent},
-    { path: 'consulta-selecao', component: ConsultaSelecaoComponent}
+    { path: 'consulta-selecao', component: ConsultaSelecaoComponent},
+    { path: 'admitir-candidato' , component: AdmitirCandidatoComponent}
 
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

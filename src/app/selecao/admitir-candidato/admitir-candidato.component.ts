@@ -1,8 +1,12 @@
+import { CargoService } from './../../services/cargo.service';
+import { CandidatoService } from './../../services/candidato.service';
+import { Candidato } from './../../services/candidato';
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { Selecao } from '../../services/selecao';
 import { Response } from '../../services/Response';
 import { SelecaoService } from 'src/app/services/selecao.service.';
+import { Cargo } from 'src/app/services/cargo';
 
 
 @Component({
@@ -13,10 +17,12 @@ import { SelecaoService } from 'src/app/services/selecao.service.';
   export class AdmitirCandidatoComponent implements OnInit {
 
     private selecoes: Selecao[] = new Array();
+    private candidatos: Candidato[] = new Array();
+    private cargos: Cargo[] = new Array();
     private titulo: string;
 
-    constructor(private selecaoService: SelecaoService,
-                private router: Router) {}
+    constructor(private selecaoService: SelecaoService, private candidatoService: CandidatoService,
+                private cargoService: CargoService, private router: Router) {}
 
     ngOnInit() {
 
@@ -25,8 +31,10 @@ import { SelecaoService } from 'src/app/services/selecao.service.';
 
       /*CHAMA O SERVIÇO E RETORNA TODAS AS PESSOAS CADASTRADAS */
       this.selecaoService.getSelecoes().subscribe(res => this.selecoes = res);
+      this.candidatoService.getCandidatos().subscribe(res => this.candidatos = res);
+      this.cargoService.getCargos().subscribe(res => this.cargos = res);
     }
-
+    // aprovar(id: number)
     /**EXCLUI UM REGISTRO QUANDO CLICAMOS NA OPÇÃO EXCLUIR DE UMA
      * LINHA DA TABELA*/
     excluir(id: number, index: number): void {
