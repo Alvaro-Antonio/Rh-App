@@ -62,7 +62,8 @@ import { TreinamentoService } from './services/treinamento.service';
     FormsModule,
     routing
   ],
-  providers: [ConfigService, CandidatoService, CargoService, FuncionarioService, TreinamentoService, BancoDeTalentosService, SelecaoService],
+  providers: [ConfigService, CandidatoService, CargoService, FuncionarioService, TreinamentoService,
+    BancoDeTalentosService, SelecaoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

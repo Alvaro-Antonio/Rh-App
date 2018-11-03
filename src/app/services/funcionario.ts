@@ -14,5 +14,4 @@ export class Funcionario {
     dataNas: string;
     email: string;
     habilidades: string;
-
 }

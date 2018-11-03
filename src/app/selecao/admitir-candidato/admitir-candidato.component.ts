@@ -75,5 +75,35 @@ import { Cargo } from 'src/app/services/cargo';
       this.router.navigate(['/cadastro-selecao', id]);
 
     }
+    contratar(candidato: Candidato, cargo: Cargo, index: number): void {
+      if (confirm('Deseja realmente Contratar esse Candidato?')) {
 
+        /*CHAMA O SERVIÇO PARA REALIZAR A inclusão */
+        this.selecaoService.addFunc(candidato, cargo).subscribe(response => {
+
+              /**PEGA O RESPONSE DO SERVIÇO */
+              // tslint:disable-next-line:prefer-const
+              let res: Response = <Response>response;
+
+              /*1 = SUCESSO
+              * MOSTRAMOS A MENSAGEM RETORNADA PELO SERVIÇO E DEPOIS incluimos
+              O REGISTRO DA TABELA HTML*/
+              // tslint:disable-next-line:triple-equals
+              if (res.id == 1) {
+                alert(res.mensagem);
+                this.selecoes.splice(index, 1);
+
+              } else {
+                /*0 = EXCEPTION GERADA NO SERVIÇO JAVA */
+                alert(res.mensagem);
+              }
+              window.location.reload();
+          },
+          (erro) => {
+               /*MOSTRA ERROS NÃO TRATADOS */
+               alert(erro);
+          });
+      }
+
+    }
   }

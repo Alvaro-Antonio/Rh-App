@@ -21,10 +21,10 @@
             <td>{{candidato.habilidades}}</td>
             <td>
               <select name="cargo" >
-                 <option *ngFor="let cargo of cargos; let i = index;" value=cargo>{{cargo.nomeCargo}}</option>
+                 <option *ngFor="let cargo of cargos; let i = index;" value=cargo >{{cargo.nomeCargo}}</option>
               </select>
             </td>
-            <td><a (click)="contratar(candidato, cargo);">Contratar</a> </td>
+            <td><a (click)="contratar(candidato, cargo.id, i);">Contratar</a> </td>
             </tr>
             <tr>
                <td colspan="6" style="text-align: right;">Total de Registros: {{ candidatos.length }}</td>

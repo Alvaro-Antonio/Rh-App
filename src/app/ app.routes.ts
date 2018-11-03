@@ -37,7 +37,8 @@ const appRoutes: Routes = [
     { path: 'cadastro-selecao', component: CadastroSelecaoComponent},
     { path: 'cadastro-selecao/:id', component: CadastroSelecaoComponent},
     { path: 'consulta-selecao', component: ConsultaSelecaoComponent},
-    { path: 'admitir-candidato' , component: AdmitirCandidatoComponent}
+    { path: 'admitir-candidato' , component: AdmitirCandidatoComponent},
+    { path: 'selecao/novoFuncionario', component: AdmitirCandidatoComponent}
 
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

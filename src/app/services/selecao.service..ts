@@ -1,3 +1,5 @@
+import { CargoService } from './cargo.service';
+import { Funcionario } from './funcionario';
 import { Candidato } from './candidato';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
@@ -22,9 +24,11 @@ export class SelecaoService {
     private baseUrlService: string;
     private headers: Headers;
     private options: RequestOptions;
+    private funcionario: Funcionario = new Funcionario();
+    private cargo: Cargo;
 
     constructor(private http: Http,
-                private configService: ConfigService) {
+                private configService: ConfigService, private cargos: CargoService) {
 
         /**SETANDO A URL DO SERVIÇO REST QUE VAI SER ACESSADO */
         this.baseUrlService = configService.getUrlService() + 'selecao/';
@@ -62,8 +66,16 @@ export class SelecaoService {
         return this.http.put(this.baseUrlService, JSON.stringify(selecao), this.options)
         .map(res => res.json());
     }
-    contratar(candidato: Candidato, cargo: Cargo) {
-
+    addFunc(candidato: Candidato, cargo: Cargo ) {
+      console.log(this.funcionario);
+      this.funcionario.id = null;
+      this.funcionario.nome = candidato.nome;
+      this.funcionario.idade = candidato.idade;
+      this.funcionario.numeroCPF = candidato.numerocpf;
+      this.funcionario.numeroRG = candidato.numeroRg;
+      this.funcionario.endereco = candidato.endereco;
+      this.funcionario.cargo = cargo;
+      this.funcionario.dataNas = candidato.dataNas;
+      return this.http.post('selecao/novoFuncionario', JSON.stringify(this.funcionario), this.options).map(res => res.json());
     }
-
 }
