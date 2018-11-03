@@ -1,3 +1,4 @@
+import { CargoService } from './../../services/cargo.service';
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
@@ -6,7 +7,6 @@ import { Funcionario } from '../../services/funcionario';
 import { FuncionarioService } from '../../services/funcionario.service';
 import { Response } from '../../services/Response';
 import { Cargo } from 'src/app/services/cargo';
-import { CargoService } from 'src/app/services/cargo.service';
 
 @Component({
     selector: 'app-cadastro-funcionario',
@@ -17,17 +17,16 @@ import { CargoService } from 'src/app/services/cargo.service';
 
     private titulo: string;
     private funcionario: Funcionario = new Funcionario();
-    private cargos: Cargo [] = new Array();
+    private cargos: Cargo[] = new Array();
 
-    constructor(private funcionarioService: FuncionarioService, private cargoService: CargoService,
-                private router: Router,
+    constructor(private funcionarioService: FuncionarioService,
+                private router: Router, private cargoService: CargoService,
                 private activatedRoute: ActivatedRoute) {}
 
   /*CARREGADO NA INICIALIZAÇÃO DO COMPONENTE */
     ngOnInit() {
-
+      this.cargoService.getCargos().subscribe(res => this.cargos = res);
       this.activatedRoute.params.subscribe(parametro => {
-        this.cargoService.getCargos();
         // tslint:disable-next-line:triple-equals
         if (parametro['id'] == undefined) {
 
@@ -41,9 +40,8 @@ import { CargoService } from 'src/app/services/cargo.service';
     }
 
     /*FUNÇÃO PARA SALVAR UM NOVO REGISTRO OU ALTERAÇÃO EM UM REGISTRO EXISTENTE */
-    salvar(): void {
+    salvarFuncionario(): void {
            console.log(this.funcionario);
-           this.cargoService.getCargos();
 /*SE NÃO TIVER CÓDIGO VAMOS INSERIR UM NOVO REGISTRO */
       // tslint:disable-next-line:triple-equals
       if (this.funcionario.id == undefined) {

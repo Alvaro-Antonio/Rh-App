@@ -33,7 +33,7 @@ export class SelecaoService {
     }
 
     /**CONSULTA TODAS AS Selecaos CADASTRADAS */
-    getSelecaos() {
+    getSelecoes() {
         return this.http.get(this.baseUrlService).map(res => res.json());
     }
 
@@ -48,7 +48,7 @@ export class SelecaoService {
         return this.http.delete(this.baseUrlService + id).map(res => res.json());
     }
 
-    /**CONSULTA UMA PESSOA PELO CÓDIGO */
+    /**CONSULTA UMA Selecao PELO CÓDIGO */
     getSelecao(id: number) {
 
         return this.http.get(this.baseUrlService + id).map(res => res.json());

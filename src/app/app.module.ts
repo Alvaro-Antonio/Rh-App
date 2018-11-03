@@ -1,3 +1,4 @@
+import { SelecaoService } from 'src/app/services/selecao.service.';
 import { CadastroCargoComponent } from './cargo/cadastro/cadastro.component';
 import { ConsultaCargoComponent } from './cargo/consulta/consulta.component';
 import { CargoService } from './services/cargo.service';
@@ -28,7 +29,6 @@ import { CadastroSelecaoComponent } from './selecao/cadastro-selecao/cadastro-se
 import { BancoDeTalentosService } from './services/BancoDeTalentos.Service';
 import { TreinamentoService } from './services/treinamento.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +50,10 @@ import { TreinamentoService } from './services/treinamento.service';
     AdmitirCandidatoComponent,
     CadastroSelecaoComponent,
     ConsultaTreinamentoComponent,
-    CadastraTalentosComponent
+    CadastraTalentosComponent,
+    CadastroSelecaoComponent,
+    ConsultaSelecaoComponent,
+    AdmitirCandidatoComponent
 
   ],
   imports: [
@@ -59,7 +62,7 @@ import { TreinamentoService } from './services/treinamento.service';
     FormsModule,
     routing
   ],
-  providers: [ConfigService, CandidatoService, CargoService, FuncionarioService, TreinamentoService, BancoDeTalentosService],
+  providers: [ConfigService, CandidatoService, CargoService, FuncionarioService, TreinamentoService, BancoDeTalentosService, SelecaoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

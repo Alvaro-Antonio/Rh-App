@@ -15,7 +15,6 @@ import { ConsultaSelecaoComponent } from './selecao/consulta-selecao/consulta-se
 import { CadastroSelecaoComponent } from './selecao/cadastro-selecao/cadastro-selecao.component';
 
 
-
 const appRoutes: Routes = [
     { path: 'home',                   component: HomeComponent },
     { path: '',                       component: HomeComponent },
@@ -36,7 +35,7 @@ const appRoutes: Routes = [
     { path: 'consulta-bancodeTalentos', component: ConsultaTalentosComponent},
     { path: 'cadastro-selecao', component: CadastroSelecaoComponent},
     { path: 'cadastro-selecao/:id', component: CadastroSelecaoComponent},
-    { path: 'consulta-selecao', component: ConsultaSelecaoComponent},
+    { path: 'consulta-selecao', component: ConsultaSelecaoComponent}
 
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

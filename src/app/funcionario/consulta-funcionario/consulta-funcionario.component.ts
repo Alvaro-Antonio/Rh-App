@@ -16,11 +16,8 @@ import { Cargo } from 'src/app/services/cargo';
 
     private funcionarios: Funcionario[] = new Array();
     private titulo: string;
-    private cargos: Cargo[] = new Array();
-
-    constructor(private funcionarioService: FuncionarioService, private cargoService: CargoService,
-                      private router: Router) {}
-
+    constructor(private funcionarioService: FuncionarioService,
+    private router: Router) {}
     ngOnInit() {
 
       /*SETA O TÍTULO */
@@ -28,7 +25,7 @@ import { Cargo } from 'src/app/services/cargo';
 
       /*CHAMA O SERVIÇO E RETORNA TODAS AS PESSOAS CADASTRADAS */
       this.funcionarioService.getFuncionarios().subscribe(res => this.funcionarios = res);
-      this.cargoService.getCargos().subscribe(res => this.cargos = res);
+
     }
 
     /**EXCLUI UM REGISTRO QUANDO CLICAMOS NA OPÇÃO EXCLUIR DE UMA
@@ -55,6 +52,7 @@ import { Cargo } from 'src/app/services/cargo';
                 /*0 = EXCEPTION GERADA NO SERVIÇO JAVA */
                 alert(res.mensagem);
               }
+              window.location.reload();
           },
           (erro) => {
                /*MOSTRA ERROS NÃO TRATADOS */

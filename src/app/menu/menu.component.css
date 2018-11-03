@@ -1,21 +1,28 @@
 div {
     float: left;
-    width: 230px;
+    width: 260px;
     height: auto;
+    margin-left: 0;
+    border-style: solid;
+    border-color: #213E8D;
+    border-radius: 12%;
 }
 
 ul {
     list-style-type: none;
-    margin: 0;
+    margin: -1px;
     padding: 0;
     overflow: hidden;
     background-color: #213E8D;
-    display: table;
     vertical-align: bottom;
+    border-radius: 12%;
+
 }
 
 li {
     float: left;
+    width: 100%;
+
 }
 
 li a {
@@ -27,5 +34,9 @@ li a {
 }
 
 li a:hover {
-    background-color: rgba(106, 141, 173, 0.71);
+    background-color: white;
+    color: #213E8D;
+    border-width: 2px;
+    border-bottom-style: outset;
+    border-color: black;
 }

@@ -4,12 +4,14 @@ div#consultaFuncionario {
     float: left;
     width: 80%;
     margin-left: 22%;
+
 }
 table {
     position:fixed;
     border-collapse: collapse;
     width: 100%;
     float: left;
+    margin-right: 5%;
 }
 
 th, td {

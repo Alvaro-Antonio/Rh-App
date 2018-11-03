@@ -35,7 +35,7 @@ export class CadastroSelecaoComponent implements OnInit {
       }
 
       /*FUNÇÃO PARA SALVAR UM NOVO REGISTRO OU ALTERAÇÃO EM UM REGISTRO EXISTENTE */
-      salvar(): void {
+      salvarSelecao(): void {
              console.log(this.selecao);
 
   /*SE NÃO TIVER CÓDIGO VAMOS INSERIR UM NOVO REGISTRO */

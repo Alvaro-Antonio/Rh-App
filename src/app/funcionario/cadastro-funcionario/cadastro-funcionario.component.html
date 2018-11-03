@@ -14,19 +14,15 @@
       <input type="number" name="idade" size="30" [(ngModel)]="funcionario.idade"/>
   </label><br/><br/>
   <label>Cargo:
-    <select>
-      <option *ngFor='let cargo of cargos; let i = index;' [ngValue]="cargo.id">
-        {{cargo.nomeCargo}}
-      </option>
-  </select>
-
-</label><br/><br/>
-
+    <select name="cargo" >
+      <option *ngFor="let cargo of cargos; let i = index;" value=cargo>{{cargo.nomeCargo}}</option>
+    </select>
+    </label><br/><br/>
   <label>Número RG:
-      <input type="input" name="numeroRg" size="30" [(ngModel)]="funcionario.numeroRg"/>
+      <input type="input" name="numeroRG" size="30" [(ngModel)]="funcionario.numeroRG"/>
   </label><br/><br/>
   <label>Número CPF:
-    <input type="input" name="numerocpf" size="30" [(ngModel)]="funcionario.numerocpf"/>
+    <input type="input" name="numeroCPF" size="30" [(ngModel)]="funcionario.numeroCPF"/>
 </label><br/><br/>
 <label>Telefone:
     <input type="tel" name="telefone" size="30" [(ngModel)]="funcionario.telefone"/>

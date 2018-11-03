@@ -22,7 +22,7 @@ export class ConsultaSelecaoComponent implements OnInit {
       this.titulo = 'Registros Cadastrados';
 
       /*CHAMA O SERVIÇO E RETORNA TODAS AS PESSOAS CADASTRADAS */
-      this.selecaoService.getSelecaos().subscribe(res => this.selecoes = res);
+      this.selecaoService.getSelecoes().subscribe(res => this.selecoes = res);
     }
 
     /**EXCLUI UM REGISTRO QUANDO CLICAMOS NA OPÇÃO EXCLUIR DE UMA

@@ -47,10 +47,12 @@ import { Response } from '../../services/Response';
               if (res.id == 1) {
                 alert(res.mensagem);
                 this.cargos.splice(index, 1);
+
               } else {
                 /*0 = EXCEPTION GERADA NO SERVIÇO JAVA */
                 alert(res.mensagem);
               }
+              window.location.reload();
           },
           (erro) => {
                /*MOSTRA ERROS NÃO TRATADOS */
